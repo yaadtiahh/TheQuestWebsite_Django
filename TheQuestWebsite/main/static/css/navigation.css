@@ -1,0 +1,43 @@
+/* Navigation bar */
+.navigation-bar {
+    position: fixed;
+    bottom: 45px; /* Отступ от низа */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 308px;
+    height: 60px;
+    background-color: rgba(37, 37, 37, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
+    z-index: 1;
+}
+
+/* Navigation icons */
+.navigation-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px; /* Расстояние между иконками */
+}
+
+/* Navigation icon */
+.nav-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Hover эффект */
+.nav-icon:hover {
+    transform: scale(1.1); /* Увеличение иконки */
+}
+
+/* Размер для активной иконки */
+.nav-link.active .map-icon{
+    width: 48px;
+    height: 48px;
+}
+
+
+

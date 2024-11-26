@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Официальный сайт, посвященный The Quest.">
+  <meta name="keywords" content="The Quest, game, AR game, Quests">
+  <meta property="og:site_name" content="The Quest">
+  <meta property="og:title" content="The Quest"/>
+  <meta property="og:type" content="website">
+  <meta itemprop="name" content="The Quest"/>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="icon" type="image/png" href="static/img/logoquest.png">
+  {% block css %}
+  {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header {{ header_class }}">
+        
+      <div class="logo">
+          <a href="/map"><img src="/static/img/logoquest.png" alt="The Quest Logo"></a>
+      </div>
+
+      <div class="header-right">
+          <div class="language-switch">
+            <img src="/static/img/language-icon.svg" class="icon" alt="Language Icon">
+            <span>Select language</span>
+            <img src="/static/img/arrow-icon.svg" class="arrow-icon" alt="Arrow Icon">
+            <ul class="language-menu">
+                <li data-lang="en">English</li>
+                <li data-lang="ru">Русский</li>
+                <li data-lang="es">Español</li>
+                <li data-lang="fr">Français</li>
+            </ul>
+        </div>
+          
+
+          <button class="our-socials-btn socials">OUR SOCIALS</button>
+          <div id="overlay" style="display: none;">
+            <div id="content-block">
+                <button type="button" id="close-block"><img src="/static/img/icon-close.png" alt="Close" /></button>
+                
+                <div id="block">
+                    <div id="main-text">
+                        <p>Our Socials</p>
+                    </div>
+                    
+                    <div id="socials">
+                        <a href="/map" class="social-item" target="_blank">
+                            <img class="social-img normal" src="/static/img/social-tt.png" alt="The Quest Tiktok">
+                            <img class="social-img hover" src="/static/img/social-tt-hover.png" alt="The Quest Tiktok Hover">
+                        </a>
+                        
+                        <a href="https://t.me/thequestgames" class="social-item" target="_blank">
+                            <img class="social-img normal" src="/static/img/social-tg.png" alt="The Quest Telegram">
+                            <img class="social-img hover" src="/static/img/social-tg-hover.png" alt="The Quest Telegram Hover">
+                        </a>
+                        <a href="/map" class="social-item" target="_blank">
+                            <img class="social-img normal" src="/static/img/social-inst.png" alt="The Quest Instagram">
+                            <img class="social-img hover" src="/static/img/social-inst-hover.png" alt="The Quest Instagram Hover">
+                        </a>
+                        <a href="/map" class="social-item" target="_blank">
+                            <img class="social-img normal" src="/static/img/social-ds.png" alt="The Quest Discord">
+                            <img class="social-img hover" src="/static/img/social-ds-hover.png" alt="The Quest Discord Hover">
+                        </a>
+                        <a href="/map" class="social-item" target="_blank">
+                            <img class="social-img normal" src="/static/img/social-x.png" alt="The Quest X">
+                            <img class="social-img hover" src="/static/img/social-x-hover.png" alt="The Quest X Hover">
+                        </a>
+                    </div>
+            
+                    <div id="contact">
+                        <hr id="line">
+                        <span id="text">CONTACT</span>
+                        <hr id="line">
+                    </div>
+
+                    <div id="send-msg">
+                        <button type="button" id="send-btn">Send Message</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </header>
+  {% block body %}
+  {% endblock %}
+
+  <div class="navigation-bar">
+    <div class="navigation-icons">
+        <a href="/info_center" class="nav-link {% if active_page == 'info_center' %}active{% else %}inactive{% endif %}">
+            <img 
+                src="{% if active_page == 'info_center' %}/static/img/infocenter-icon-active.svg{% else %}/static/img/infocenter-icon.svg{% endif %}" 
+                alt="InfoCenter" 
+                class="nav-icon">
+        </a>
+        <a href="/map" class="map-icon nav-link {% if active_page == 'map' %}active{% else %}inactive{% endif %}">
+            <img 
+                src="{% if active_page == 'map' %}/static/img/map-icon-active.svg{% else %}/static/img/map-icon.svg{% endif %}" 
+                alt="Map" 
+                class="nav-icon">
+        </a>
+        <a href="/profile" class="nav-link {% if active_page == 'profile' %}active{% else %}inactive{% endif %}">
+            <img 
+                src="{% if active_page == 'profile' %}/static/img/profile-icon-active.svg{% else %}/static/img/profile-icon.svg{% endif %}" 
+                alt="Profile" 
+                class="nav-icon">
+        </a>
+    </div>
+    </div>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+body, html {
+    background: url(/static/img/herosection.png);
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Высота экрана */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+/* Стили выделения текста */
+::selection {
+    background: transparent; 
+    color: #FF4E47; 
+}
+::-moz-selection {
+    background: transparent; 
+    color: #FF4E47;
+}
+
+.sub-title {
+    color: #797979;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 25px; /* Отступ снизу */
+}
+
+.container {
+    border-bottom: 1px solid rgb(39, 39, 39);
+    height: 677px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Выравнивание по низу */
+}
+
+
+.info {
+    margin: 0px 250px 0;
+    text-align: left;
+}
+
+.info a {
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    font-size: 18px;
+    font-size: 20px;
+    color: #797979;
+    letter-spacing: 1px;
+    line-height: 24px; /* Совпадает с высотой иконки */
+    font-weight: 200;
+}
+
+.right-arrow-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px; /* Отступ от текста */
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.right-arrow-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px; /* Отступ от текста */
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+
+.main-content p {
+    font-size: 15px;
+    font-weight: 500;
+    border: solid 3px #5EF5FF;
+    border-radius: 5px;
+    color: #5EF5FF;
+    background: rgb(94, 246, 255, 15%);
+    height: 31px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+
+.main-text p {
+    margin: 0;
+    font-size: 92px;
+    line-height: 92px;
+    font-weight: bold;
+    margin-bottom: 25px; /* Отступ снизу */
+    color: white;
+}
+
+/* кнопки news, updates, events */
+  
+.menu {
+    margin: 0px 250px 0;
+    margin-top: 90px;
+}
+
+.menu-button {
+    width: 200px;
+    height: 60px;
+    background-color: #0D0D0D;
+    color: #ACACAC;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 20px;
+}
+
+.menu-button:not(.active):hover {
+    background-color: #131313;
+}
+
+.menu-button.active {
+    color: #FFCE00;
+    border-top: 2px solid #FFCE00; /* Подчеркивание активной кнопки */
+}
+
+.content {
+    padding: 20px;
+}
+  
+.news-events-updates{
+    background: url('../img/bg.png') no-repeat center center/cover;
+    height: 1000px;
+    background-color: #111;
+    color: antiquewhite;
+}

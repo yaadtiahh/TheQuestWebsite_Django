@@ -1,0 +1,76 @@
+{% extends 'template.html' %}
+
+{% load static %}
+
+{% block title %}
+  The Quest
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+{% endblock %}
+
+{% block body %}
+  <main>
+
+    <div class="centered-content">
+      <div class="centered-text">
+          <span class="welcome">Welcome to</span>
+          <h1 class="title">The Quest</h1>
+      </div>
+      <div class="cta-button-container">
+          <button class="get-the-quest get"></button>
+      </div>
+  
+      <!-- Модальное окно -->
+      <div id="overlaytwo" class="modal" style="display: none;">
+          <div id="content-block" class="modal-content">
+              <!-- Кнопка закрытия -->
+              <button type="button" id="close-block-two" class="modal-close">
+                  <img src="/static/img/icon-close.png" alt="Close Button" />
+              </button>
+  
+              <!-- Основной текст -->
+              <div id="main-text">
+                <p>COMING SOON . . .</p>
+              </div>
+  
+              <!-- Изображение -->
+              <div id="chill-man">
+                  <img src="/static/img/chill-man.png" alt="Chill Man">
+              </div>
+  
+              <!-- Описание -->
+              <div id="description">
+                  <p>
+                    <b>The game <strong>"The Quest"</strong> is still in development.</b><br>
+                    Subscribe to our <a href="/error_page">social networks</a> to follow the news.<br>
+                  </p>
+              </div>
+  
+              <!-- Прогресс-бар -->
+              <div id="loading">
+                  <div class="progress-bar">
+                      <div class="progress" id="progress" style="width: 0%;"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+    
+  </main>
+
+  <div class="privacy-policy">
+    <div class="fixed-text-block">
+      <p class="first-text">The Quest - it's just a game.</p>
+      <p class="second-text">For investment inquiries, <a href="/map">please reach out</a> to us.</p>
+    </div>
+
+    <div class="privacy-block">
+      <a href="#">Job openings</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+{% endblock %}

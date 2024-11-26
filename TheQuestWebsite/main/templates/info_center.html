@@ -1,0 +1,50 @@
+{% extends 'template.html' %}
+
+{% load static %}
+
+{% block title %}
+  The Quest
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/info_center.css' %}">
+{% endblock %}
+
+{% block body %}
+  <main>
+    <div class="container">
+      <div class="info">
+        <div class="main-content">
+          <span class="sub-title">24 November 2024</span>
+          <p>NEW POST</p>
+
+        </div>
+
+        <div class="main-text">
+          <p>We launched «The Quest» website!</p>
+        </div>
+
+        <div>
+          <a href="/map">
+            READ MORE 
+            <img src="/static/img/right-arrow-icon.svg" alt="Icon" class="right-arrow-icon" />
+          </a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button class="menu-button" data-section="news">NEWS</button>
+        <button class="menu-button" data-section="events">EVENTS</button>
+        <button class="menu-button" data-section="updates">UPDATES</button>
+      </div>
+    
+
+    </div>
+    <div class="news-events-updates">
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="events" style="display: none;">This is the EVENTS content.</div>
+      <div class="content" id="updates" style="display: none;">This is the UPDATES content.</div>
+  </div>
+  <script src="{% static 'js/info_center.js' %}"></script>
+  {% endblock %}
+</main>

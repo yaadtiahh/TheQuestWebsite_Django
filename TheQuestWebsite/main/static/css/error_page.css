@@ -1,0 +1,93 @@
+/* Основные стили */
+body, html {
+    background: url(/static/img/bg.png) no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Высота экрана */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+/* Центрирование контента */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 300px);
+    text-align: center;
+    position: relative;
+}
+
+/* Основной контейнер */
+.error-content {
+    display: flex;
+    justify-content: center; /* Горизонтальное центрирование */
+    gap: 80px; /* Отступ между блоками */
+    align-items: center;
+}
+
+/* Стили для блока 404 */
+.block404 {
+    position: relative;
+    font-size: 118px;
+    font-weight: 600; /* semibold */
+    font-style: italic;
+    color: #ffce00;
+    z-index: 1;
+}
+
+/* Glitch эффекты с помощью псевдоэлементов */
+.block404::before,
+.block404::after {
+    position: absolute;
+    content: attr(data-text); /* Используем текст из атрибута data-text */
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+.block404::before {
+    animation: glitch-color 1.5s infinite;
+    color: #5EF6FF;
+    -webkit-text-stroke: 3px #5EF6FF;
+    z-index: -1;
+}
+
+.block404::after {
+    animation: glitch-color 1.5s infinite reverse;
+    color: #ff0800;
+    -webkit-text-stroke: 3px #ff0800; 
+    z-index: -2;
+}
+
+/* Анимация "glitch" */
+@keyframes glitch-color {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+    }
+    60% {
+        transform: translate(3px, 3px);
+    }
+    80% {
+        transform: translate(3px, -3px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Стили для текста ошибки */
+.error-text {
+    font-size: 38px;
+    font-weight: 600; /* semibold */
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

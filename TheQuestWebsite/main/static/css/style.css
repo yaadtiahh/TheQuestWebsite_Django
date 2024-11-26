@@ -1,0 +1,300 @@
+
+body, html {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: url('../img/HeroSection.png') no-repeat center center/cover;
+    background-color: #111;
+    height: 100vh; /* Высота экрана */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+}
+
+/* Стили выделения текста */
+::selection {
+    background: transparent; 
+    color: #FF4E47; 
+}
+::-moz-selection {
+    background: transparent; 
+    color: #FF4E47;
+}
+
+/* Центрируем контент */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 400px);
+    text-align: center;
+    position: relative;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+/* Блок с текстом и кнопкой */
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; /* Для работы hover на всем блоке */
+    transition: all 0.2s;
+    position: relative;
+}
+
+.centered-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Аналогичные настройки для текста "Welcome to" */
+.centered-content .welcome {
+    font-size: 88px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600; /* semibold */
+    font-style: italic; /* italic */
+    color: transparent;
+    -webkit-text-stroke: 2px #8B8B8B; /* Обводка текста */
+    line-height: 106px; /* Межстрочное расстояние */
+    letter-spacing: -3px; /* Межбуквенное расстояние */
+    transition: all 0.2s ; /* Эффект при уходе мыши */
+}
+
+/* Стили текста "The Quest" */
+.centered-content .title {
+    font-size: 128px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    color: #070306; /* Основной цвет текста */
+    text-shadow: 0px 0px 16px rgba(255, 206, 0, 1); /* Желтая тень */
+    -webkit-text-stroke: 2px #FFCE00; /* Обводка текста */
+    line-height: 128px; /* Межстрочное расстояние */
+    margin: 0px;
+    position: relative; /* Для управления позиционированием псевдоэлементов */
+    transition: all 0.2s; /* Эффект при уходе мыши */
+}
+
+/* Кавычка слева */
+.centered-content .title::before {
+    content: '«';
+    margin-right: 15px; 
+}
+
+/* Кавычка справа */
+.centered-content .title::after {
+    content: '»';
+    margin-left: 15px;
+}
+
+/* Контейнер для кнопки */
+.cta-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 100%; /* Расположим кнопки под блоком с текстом */
+    margin-top: 75px; /* Отступ между текстом и кнопкой */
+    width: 100%;
+}
+
+.cta-button-container .get-the-quest {
+    width: 380px;
+    height: 68px;
+    background: url(/static/img/button-default.svg);
+    border: none;
+    cursor: pointer;
+}
+
+.get-the-quest:hover {
+    width: 380px;
+    height: 68px;
+    background: url(/static/img/button-hover.svg);
+    border: none;
+    cursor: pointer;
+}
+
+/* Hover эффект для всего блока */
+.centered-content:hover .welcome{
+    color: #fff; /* Заполняем цветом */
+    -webkit-text-stroke-color: white; /* Убираем обводку */ 
+}
+
+.centered-content:hover .title {
+    color: #FFCE00; /* Специальный цвет для "The Quest" */
+}
+
+
+.privacy-policy {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 45px;
+    position: fixed;
+}
+
+.fixed-text-block {
+    padding-left: 250px; /* Отступ слева */
+    font-family: 'Chakra Petch', sans-serif;
+    gap: 15px;
+    text-align: left;
+    color: #7E7E7E;   
+}
+
+.fixed-text-block .first-text {
+    color: #5EF6FF;
+    margin: 0px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.fixed-text-block .second-text {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.privacy-block {
+    padding-right: 250px; /* Отступ справа */
+    color: #7E7E7E; /* Цвет текста */
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.second-text a{
+    color: #7E7E7E;
+    margin: 0;
+    padding: 0;
+}
+
+.second-text a:hover {
+    color: #5EF6FF;
+}
+
+.privacy-block a{
+    color: #7E7E7E;
+    padding-left: 30px;
+}
+
+.privacy-block a:hover {
+    color: #FFCE00;
+}
+
+/* GOT THE QUEST */
+#overlaytwo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+}
+
+#overlaytwo #content-block {
+    padding-top: 50px;
+    position: fixed;
+    width: 700px;
+    height: 650px;
+    max-width: 90%; /* чтобы блок не выходил за пределы экрана на маленьких устройствах */
+    background-color: rgb(13, 13, 13);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2F2F2F; /* Рамка толщиной 1px с нужным цветом */
+    box-sizing: border-box; /* Учет рамки в размерах блока */
+    border-radius: 10px;
+}
+
+#overlaytwo #close-block-two {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    width: 30px; 
+    height: 30px;
+    background-color: transparent; 
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#overlaytwo #block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#overlaytwo #main-text {
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+#overlaytwo #main-text p{
+    font-size: 48px;
+    font-weight: bold;
+    -webkit-text-stroke: 2px #FFCE00;
+    color: transparent ;
+}
+
+#overlaytwo #description p{
+    font-size: 18px;
+    color: #747474;
+    margin:0;
+}
+
+#overlaytwo #description b{
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 35px;
+}
+
+#overlaytwo #description a{
+    font-size: 18px;
+    color: #747474;
+}
+#overlaytwo #description a:hover{
+    color: #FFCE00;
+}
+
+#overlaytwo #description strong{
+    color: #FFCE00;
+}
+
+#overlaytwo #chill-man {
+    margin-bottom: 35px;
+    margin-top:50px;
+}
+
+#loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.progress-bar {
+    width: 420px; /* Ширина прогресс-бара */
+    height: 3px; /* Высота прогресс-бара */
+    background-color: transparent; /* Цвет фона */
+    border: 1px solid #FFCE00; /* Рамка */
+    overflow: hidden; /* Скрываем содержимое за границей */
+    position: relative;
+    padding:4px 7px 4px 7px;
+}
+
+.progress {
+    width: 1%; /* Начальная ширина заполнения */
+    height: 100%;
+    background-color: #FFCE00; /* Цвет заполнения */
+    transition: width 0.3s ease; /* Анимация плавного заполнения */
+}
+
+
+
+
+

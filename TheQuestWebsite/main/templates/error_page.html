@@ -1,0 +1,22 @@
+{% extends 'template.html' %}
+
+{% block title %}
+  The Quest
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error_page.css') }}">
+{% endblock %}
+
+{% block body %}
+  <main>
+    <div class="error-content">
+      <div class="block404" data-text="404">
+        404
+      </div>
+      <div class="error-text">
+        ERRORS.PAGE-NOT-FOUND
+      </div>
+    </div>
+  </main>
+{% endblock %}

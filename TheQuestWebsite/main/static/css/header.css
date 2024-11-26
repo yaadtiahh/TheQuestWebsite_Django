@@ -1,0 +1,282 @@
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Элементы выравниваются по краям */
+    align-items: center;
+    padding: 0px 250px; /* Отступы слева и справа */
+    margin-top: 48px;
+    font-family: 'Chakra Petch', sans-serif;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    z-index: 10; /* На переднем плане */
+    box-sizing: border-box;
+}
+
+
+/* Прозрачный хедер */
+.transparent-full-header {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Логотип */
+.header .logo img {
+    max-height: 70px; /* Размер логотипа */
+}
+
+/* Контейнер для правых элементов */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Расстояние между кнопкой и переключателем языка */
+}
+
+/* Переключение языка */
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px; 
+    font-weight: 500;
+    position: relative; /* Для корректного позиционирования меню */
+    cursor: pointer;
+}
+
+.language-switch .icon,
+.language-switch .arrow-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.language-menu {
+    display: none; /* Меню скрыто по умолчанию */
+    position: absolute;
+    top: 100%; /* Меню располагается ниже переключателя */
+    right: 0;
+    background: #222;
+    border-radius: 5px;
+    list-style: none;
+    z-index: 1000;
+    width: 175px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    overflow: hidden; 
+}
+
+/* Активное меню (показать) */
+.language-menu.language-menu-active {
+    display: block;
+}
+
+/* Иконка стрелки (поворот) */
+.arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon.arrow-rotated {
+    transform: rotate(180deg); /* Поворачиваем стрелку */
+}
+
+
+/* Стили для элементов списка */
+.language-menu li {
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+.language-menu li:hover {
+    background: #FFCE00;
+    color: black;
+}
+
+/* Hover эффект */
+.language-switch.active .language-menu {
+    display: block;
+}
+
+.language-switch.active .arrow-icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+/* Кнопка OUR SOCIALS */
+.our-socials-btn {
+    width: 200px;
+    height: 50px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 21px;
+    letter-spacing: -1%; /* Межбуквенное расстояние */
+    color: #5EF6FF; /* Цвет текста */
+    background: none; /* Убираем фон */
+    border: 2px solid #5EF6FF; /* Обводка кнопки */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Плавный переход при hover */
+}
+
+/* Hover-эффект для OUR SOCIALS */
+.our-socials-btn:hover {
+    background: #5EF6FF; /* Заполняем цветом */
+    color: #111; /* Цвет текста при наведении */
+}
+
+
+
+/* OUR SOCIALS */
+
+#overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 15, 17, 0.486);
+}
+
+#content-block {
+    position: fixed;
+    width: 950px;
+    height: 850px;
+    max-width: 90%; /* Адаптивность для маленьких экранов */
+    background-color: rgb(0, 0, 0); /* Фон */
+    z-index: 2;
+    border: 1px solid #2F2F2F; /* Рамка толщиной 1px с нужным цветом */
+    box-sizing: border-box; /* Учет рамки в размерах блока */
+    border-radius: 10px;
+}
+
+
+#close-block {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    width: 30px; 
+    height: 30px;
+    background-color: transparent; 
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#block {
+    width: 790px;
+    height: 693px;
+    margin: 78px;
+}
+
+#main-text {
+    margin-bottom: 30px;
+}
+
+#main-text p{
+    font-size: 98px;
+    font-weight: 800;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 3px #5EF6FF;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#socials {
+    width: 790px;
+    height: 370px;
+    display: flex;
+    justify-content: space-between; /* Распределение элементов */
+    gap: 5px; /* Расстояние между элементами */
+}
+
+/* SOCIAL ICONS */
+
+#socials {
+    display: flex;
+    gap: 10px;
+}
+
+.social-item {
+    display: inline-block;
+    position: relative;
+}
+
+.social-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 300ms ease-out;
+}
+
+/* Initially, hide the hover image */
+.social-item .hover {
+    opacity: 0;
+}
+
+/* On hover, hide the normal image and show the hover image */
+.social-item:hover .normal {
+    opacity: 0;
+}
+
+.social-item:hover .hover {
+    opacity: 1;
+}
+
+
+#socials a{
+    width: 150px;
+    height: 350px;
+}
+
+#socials a img {
+    width: 100%; /* Занимает всю ширину ссылки */
+    height: 100%; /* Занимает всю высоту ссылки */
+    object-fit: cover; /* Сохраняет пропорции изображения */
+}
+
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #4B4B4B;
+}
+
+#line {
+    width: 210px;
+    border: none; /* Убираем стандартные границы */
+    border-top: 1px solid #4B4B4B; /* Линия */
+    margin: 0 10px; /* Отступы между линией и текстом */
+}
+
+#text {
+    white-space: nowrap; /* Запрет на перенос текста */
+}
+
+#send-msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#send-btn {
+    width: 320px;
+    height: 50px;
+    background-color: #5EF6FF;
+    color: #111;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}

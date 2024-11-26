@@ -1,0 +1,38 @@
+{% extends 'template.html' %}
+
+{% load static %}
+
+{% block title %}
+  The Quest
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block body %}
+  <main>
+    <div class="profile-content">
+
+      <div class="phone-img">
+        <button><img src="/static/img/button-left.png" alt="Icon"></button>
+        <img src="/static/img/iPhone-center.png" alt="Icon">
+        <button><img src="/static/img/button-right.png" alt="Icon"></button>
+      </div>
+
+      <div class="main-content">
+        <h2>QUESTS</h2>
+        <h1>Quests around the world!</h2>
+        <p>Lorem Ipsum has been the industry's<br>standard dummy text ever since the 1500s,<br> when an unknown printer took a galley of<br>type and scrambled it to make a type ...</p>
+        
+        <div class="hashtags">
+          <p>Physical activity</p>
+          <p>Worldwide</p>
+          <p>Social interactions</p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+{% endblock %}
